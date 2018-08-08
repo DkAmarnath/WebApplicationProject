@@ -14,5 +14,9 @@ namespace WebApplicationProject.Controllers
             return View();
         }
 
+        public ActionResult Save()
+        {
+
+        }
     }
 }

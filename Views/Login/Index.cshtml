@@ -6,7 +6,14 @@
 <h2>Index</h2>
 
 @Html.Label("Login Page")</br>
-@Html.Label("User Name:")
-@Html.TextBox("UserName",null, new { placeholder="User Name"})</br>
-@Html.Label("Password:")&nbsp;
-@Html.TextBox("Password", null, new { placeholder = "Password" })
+@using (Html.BeginForm("Save", "Login"))
+{
+    @Html.AntiForgeryToken()
+ @Html.Label("User Name:")
+    @Html.TextBox("UserName", null, new { placeholder = "User Name" })
+    @Html.Label("Password:")<text>&nbsp;</text>
+   @Html.TextBox("Password", null, new { placeholder = "Password" })
+    <button type="submit" >Login</button>
+    <button type="reset">Reset</button>
+}
+
